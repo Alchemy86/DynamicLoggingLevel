@@ -1,0 +1,13 @@
+
+version: '3.4'
+
+services:
+  loggertest:
+    image: loggertest
+    environment:
+      - Serilog__LevelSwitches__$$consoleSwitch=Information
+      - moo=Information
+    build:
+      context: .
+      dockerfile: LoggerTest/Dockerfile
+

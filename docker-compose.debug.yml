@@ -1,0 +1,11 @@
+
+version: '3.4'
+
+services:
+  loggertest:
+    image: loggertest
+    build:
+      context: .
+      dockerfile: LoggerTest/Dockerfile
+    volumes:
+      - ~/.vsdbg:/remote_debugger:rw
