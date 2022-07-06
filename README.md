@@ -13,7 +13,7 @@ docker compose -f 'docker-compose.yml' -f 'docker-compose.debug.yml' up -d --bui
 Will now be running
 
 ## Swarm - Easier
-# Can then apply env variables with a click
+### Can then apply env variables with a click
 
 docker swarm init
 
