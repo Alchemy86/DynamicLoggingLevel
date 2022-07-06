@@ -10,4 +10,3 @@ services:
     build:
       context: .
       dockerfile: LoggerTest/Dockerfile
-
