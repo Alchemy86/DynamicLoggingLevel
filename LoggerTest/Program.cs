@@ -16,10 +16,8 @@ var configuration = new ConfigurationBuilder()
 
 
 var levelSwitch = new LoggingLevelSwitch();
-levelSwitch.MinimumLevel = LogEventLevel.Information;//  (LogEventLevel)Enum.Parse(typeof(LogEventLevel), configuration["Serilog:LevelSwitches:$consoleSwitch"] ?? "Information", true);
+levelSwitch.MinimumLevel = configuration.GetValue("Serilog:LevelSwitches:$consoleSwitch", LogEventLevel.Information);
 
-var myMoo = configuration["moo"];
-    
 
 // build Serilog logger from IConfiguration
 var log = new LoggerConfiguration()
@@ -38,7 +36,6 @@ while (true)
     log.Fatal("This is a Fatal log message");
 
     Console.WriteLine("LOGLEVEL : " + configuration["Serilog:LevelSwitches:$consoleSwitch"]);
-    Console.WriteLine("Moo? : " + myMoo);
-    
+
     await Task.Delay(2000);
 }
